@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+  webserver:
+    container_name: 'webserver'
+    image: stephanlindauer/docker-random-webserver
+    networks:
+      - innerNet
+
+  mitm:
+    container_name: 'mitm'
+    build: .
+    stdin_open: true
+    tty: true
+    networks:
+      - innerNet
+
+  victim:
+    container_name: 'victim'
+    image: alpine
+    stdin_open: true
+    tty: true
+    networks:
+      - innerNet
+
+networks:
+  innerNet:
+    driver: bridge
