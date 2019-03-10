@@ -13,7 +13,7 @@ There are 3 Machines:
 - MITM with Kali Linux
 - Victim Node (just an simple Alpine Linux)
 
-###Steps:
+###Steps (MITM):
 
 1. Setup IP forwarding:
 `echo 1 > /proc/sys/net/ipv4/ip_forward`
@@ -22,3 +22,6 @@ There are 3 Machines:
 3. Now you can use:
  - `urlsnarf -i eth0` -> get HTTP-Requests
  - `driftnet -i eth0` -> get Images
+ 
+ ###Steps (Victim)
+ Just type inside `wget webserver:8080` or outside `docker exec victim webserver:8080`
