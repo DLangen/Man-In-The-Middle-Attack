@@ -1,5 +1,5 @@
 # Setup for an Man-in-the-middle (MITM) attack 
-###Prerequisite
+### Prerequisite
 - Docker is installed
 - you can use docker-compose commands
 
@@ -7,13 +7,13 @@
 Just use following command:
 `docker-compose up --build`
 
-###Infrastructure 
+### Infrastructure 
 There are 3 Machines: 
 - Webserver 
 - MITM with Kali Linux
 - Victim Node (just an simple Alpine Linux)
 
-###Steps (MITM):
+### Steps (MITM):
 
 1. Setup IP forwarding:
 `echo 1 > /proc/sys/net/ipv4/ip_forward`
@@ -23,5 +23,5 @@ There are 3 Machines:
  - `urlsnarf -i eth0` -> get HTTP-Requests
  - `driftnet -i eth0` -> get Images
  
- ###Steps (Victim)
+ ### Steps (Victim)
  Just type inside `wget webserver:8080` or outside `docker exec victim webserver:8080`
