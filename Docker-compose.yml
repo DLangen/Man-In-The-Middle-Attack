@@ -2,7 +2,7 @@ version: "3.3"
 services:
   webserver:
     container_name: 'webserver'
-    image: stephanlindauer/docker-random-webserver
+    image: tomcat
     networks:
       - innerNet
 
@@ -16,7 +16,7 @@ services:
 
   victim:
     container_name: 'victim'
-    image: alpine
+    image: busybox
     stdin_open: true
     tty: true
     networks:
